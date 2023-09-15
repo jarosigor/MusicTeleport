@@ -9,5 +9,15 @@
 <body>
     <h1>HOME PAGE</h1>
     <button id="logoutButton">Logout</button>
+    <button id="importPlaylistButton">Show Playlists</button>
+    {% if form %}
+        <label for="selectPlaylist"></label>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input id="submitPlaylistButton" type="submit" value="click">
+        </form>
+    {% endif %}
+    <script src = "{% static 'js/home.js' %}"></script>
 </body>
 </html>

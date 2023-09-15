@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 from . import views
-from .forms import UserLoginForm
 
 urlpatterns = [
     path('', views.base, name='base'),
@@ -27,5 +26,5 @@ urlpatterns = [
     path('register/', views.register_user, name='register'),
     path('spotify/authorize/', views.spotify_authorize, name='spotify-authorize'),
     path('spotify/callback/', views.spotify_authorize_callback, name='spotify-callback'),
-    path('spotify/import-playlist/', views.spotify_import_playlist, name='spotify-import-playlist')
+    path('home/import-playlist/', views.select_playlist, name='spotify-import-playlist'),
 ]

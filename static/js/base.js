@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const logoutButton = document.getElementById('logoutButton');
 
     authorizeButton.addEventListener('click', function() {
-        window.location.href = 'spotify/authorize/';
+        window.location.href = 'http://localhost:8000/spotify/authorize/';
     });
 
     logoutButton.addEventListener('click', function () {
-        window.location.href = 'logout/';
+        window.location.href = 'http://localhost:8000/logout/';
     })
 
 });

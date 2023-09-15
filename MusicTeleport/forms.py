@@ -16,3 +16,12 @@ class RegistrationForm(UserCreationForm):
 class UserLoginForm(forms.Form):
     username = forms.CharField(max_length=150)
     password = forms.PasswordInput()
+
+
+class PlaylistSelectForm(forms.Form):
+    def __init__(self, playlist_choices, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['selected_playlist'] = forms.ChoiceField(
+            choices=playlist_choices,
+            widget=forms.RadioSelect
+        )

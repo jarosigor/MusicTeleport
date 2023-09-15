@@ -1,13 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const authorizeButton = document.getElementById('importPlaylistButton');
+    const importPlaylistButton = document.getElementById('importPlaylistButton');
     const logoutButton = document.getElementById('logoutButton');
+    const submitPlaylistButton = document.getElementById('submitPlaylistButton');
 
-    authorizeButton.addEventListener('click', function() {
-        window.location.href = 'home/import-playlist/';
+    importPlaylistButton.addEventListener('click', function() {
+        window.location.href = 'http://localhost:8000/home/import-playlist/';
     });
 
     logoutButton.addEventListener('click', function () {
-        window.location.href = 'logout/';
-    })
+        window.location.href = 'http://localhost:8000/logout/';
+    });
+
+    submitPlaylistButton.addEventListener('click', function () {
+        window.location.href = 'http://localhost:8000/home/import-playlist/list-songs/';
+    });
 
 });

@@ -21,16 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_pphl=03(x7)q+k=3$8bj*d01q6tm2bojjtqc0rafbqfi%v_0^'
+SECRET_KEY = getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = ''
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = 'http://localhost:8000/login/'
+LOGIN_REDIRECT_URL = 'http://localhost:8000/home/'
+LOGOUT_REDIRECT_URL = 'http://localhost:8000/login/'
 
 # Application definition
 
@@ -142,3 +142,18 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}

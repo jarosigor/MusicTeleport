@@ -14,5 +14,6 @@ class Token(models.Model):
 
 
 class Playlist(models.Model):
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     spotify_id = models.CharField(max_length=50, unique=True)

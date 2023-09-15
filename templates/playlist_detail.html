@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>Playlist Detail</title>
+</head>
+<body>
+    <h1>Playlist Songs</h1>
+    <ul>
+        {% for track in tracks %}
+            <li>{{ track }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
